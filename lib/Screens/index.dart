@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_media_ui/Screens/home.dart';
+import 'package:social_media_ui/Screens/profile.dart';
 
 import 'package:social_media_ui/constrant.dart';
 
@@ -22,8 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = <Widget>[
     HomeScreens(),
     favariteScreen(),
+    ProfileScreen(),
     OrderScreen(),
-    Profile(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -86,11 +87,3 @@ class OrderScreen extends StatelessWidget {
   }
 }
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}

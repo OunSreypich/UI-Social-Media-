@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Models/stories.dart';
+
 class story_reusable extends StatelessWidget {
   const story_reusable({
     super.key,
@@ -10,11 +12,11 @@ class story_reusable extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 15),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.26,
+        height: MediaQuery.of(context).size.height * 0.28,
          //color: Colors.pink,
         width: double.infinity,
         child: ListView.builder(
-          itemCount: 10,
+          itemCount: lstStory.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Padding(
@@ -26,12 +28,12 @@ class story_reusable extends StatelessWidget {
                     children: [
                       Container(
                         width: 135,
-                        height: MediaQuery.of(context).size.height * 0.22,
+                        height: MediaQuery.of(context).size.height * 0.24,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: Image.network(
-                            height: MediaQuery.of(context).size.height * 0.23,
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyW2MAFrFnfa_bT1jSttLbmvfotJcqQyCCGg&s',
+                            height: MediaQuery.of(context).size.height * 0.24,
+                            '${lstStory[index].imageUrl}',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -61,7 +63,7 @@ class story_reusable extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'Sreypich',
+                        '${lstStory[index].name}',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 12,

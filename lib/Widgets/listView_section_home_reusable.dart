@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Models/post.dart';
+
 class ListView_section extends StatelessWidget {
   const ListView_section({
     super.key,
@@ -11,7 +13,7 @@ class ListView_section extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.50,
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: 10,
+        itemCount: lstPost.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(bottom: 15),
@@ -31,7 +33,7 @@ class ListView_section extends StatelessWidget {
                           Expanded(
                             child: Image.network(
                                 width: double.infinity,
-                                'https://cdn.britannica.com/80/155980-050-3A532B36/Restaurant-village-Alpine-Grindelwald-Switzerland.jpg',
+                                '${lstPost[index].image}',
                                 fit: BoxFit.cover),
                           ),
                           const SizedBox(height: 5),
@@ -51,7 +53,7 @@ class ListView_section extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                           child: Image.network(
-                                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyW2MAFrFnfa_bT1jSttLbmvfotJcqQyCCGg&s',
+                                              '${lstPost[index].imageProfile}',
                                               fit: BoxFit.cover),
                                         ),
                                       ),
@@ -60,12 +62,12 @@ class ListView_section extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text('Sreypich',
+                                          Text('${lstPost[index].name}',
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 15,
                                                   fontWeight: FontWeight.bold)),
-                                          Text('2 hours ago',
+                                          Text('${lstPost[index].time}',
                                               style: TextStyle(
                                                   color: Colors.grey)),
                                         ],
